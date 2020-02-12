@@ -1,5 +1,3 @@
-![](https://raw.githubusercontent.com/phantomdiorama/20mins/master/icon.ico)
-
 # 20mins 
 Twenty minute writing sprints with simple word count tracking
 
