@@ -1,7 +1,7 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#Warn  ; Recommended for catching common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+﻿#NoEnv
+#Warn
+SendMode Input
+SetWorkingDir %A_ScriptDir%
 #singleinstance force
 
 Menu, Tray, Icon, icon.ico
@@ -10,6 +10,7 @@ Gosub, Timeup
 return
 
 Timeup:
+;sleep 10000
 sleep 1200000
 Gui, New, , 20mins
 Gui, Font, s12
@@ -24,20 +25,14 @@ return
 
 Again:
 gui,submit
-FileAppend, 
-(
-	%A_MMM% %A_DD% %A_YYYY% at %A_Hour%:%A_Min% 
-	Words: %MyEdit% `n
-), wordcount.txt
+file := FileOpen("wordcount.txt", "a") 
+File.Write(A_DD " "A_MMMM " " A_YYYY "`r`n" "word count: "MyEdit "`r`n`r`n")
 Gosub, Timeup
 return 
 
 Quit:
 gui,submit
-FileAppend, 
-(
-	%A_Hour%:%A_Min% on %A_MMM% %A_DD% %A_YYYY%
-	Words: %MyEdit% `n
-), wordcount.txt
+file := FileOpen("wordcount.txt", "a") 
+File.Write(A_DD " "A_MMMM " " A_YYYY "`r`n" "word count: "MyEdit "`r`n`r`n")
 ExitApp
 return 
