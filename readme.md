@@ -1,4 +1,4 @@
-# 20mins ![](https://raw.githubusercontent.com/phantomdiorama/barrel/master/icon.ico)
+# 20mins ![](https://raw.githubusercontent.com/phantomdiorama/20mins/master/icon.ico)
 
 Twenty minute writing sprints with simple word count tracking
 
